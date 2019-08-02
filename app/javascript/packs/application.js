@@ -38,3 +38,4 @@ initSweetalert('#sweet-alert-delete', {
 });
 console.log('Hello World from Webpacker')
 
+AOS.init();

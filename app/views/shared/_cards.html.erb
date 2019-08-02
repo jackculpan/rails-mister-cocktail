@@ -2,12 +2,14 @@
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
     <a href="<%=cocktail_path(cocktail.id)%>" class="href">
+    <div data-aos="flip-left">
     <div class="cocktail-card">
       <div class="card-category cocktail-card-img"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo%>')">
         <div class="cocktail-card-content">
           <h2><%= cocktail.name %></h2>
         </div>
       </div>
+    </div>
     </div>
     </a>
     <% end %>
