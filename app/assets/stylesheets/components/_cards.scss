@@ -5,7 +5,6 @@
 }
 
 .cocktail-card {
-  height: 200px;
   width: 100%;
   position: relative;
   margin: .5rem 0 1rem 0;
@@ -18,14 +17,16 @@
 }
 
 .cocktail-card-img {
-  height: 200px;
+  height: 400px;
   background-position: center;
   background-size: cover;
 }
 
 .cocktail-card-content {
+  display: flex;
   padding-top: 10px;
   padding-left: 10px;
+  align-items: flex-end;
 }
 
 .cocktail-show-card {
@@ -34,7 +35,13 @@
   margin-bottom: 20px;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   border-radius: 3px;
+  ul {
+    list-style-type: none;
+    margin-left: none;
+  }
 }
+
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

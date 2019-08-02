@@ -15,7 +15,11 @@ end %>
       <div class="cocktail-show-card">
         <h2>Description</h2>
         <p><%=  %> </p>
-        <%= link_to "Edit", edit_cocktail_path(@cocktail.id), class: "btn btn-primary mb-2" %>
+        <ul>
+          <li><%= link_to "Edit", edit_cocktail_path(@cocktail.id), class: "btn btn-primary mb-2" %></li>
+          <li><button id="sweet-alert-delete" class="btn btn-danger">Delete</button></li>
+          <%= link_to "", cocktail_path(@cocktail.id), method: :delete, id: "delete-link", class: "" %>
+        </ul>
       </div>
       <div class="cocktail-show-card">
         <h5> Reviews </h5>
@@ -48,8 +52,8 @@ end %>
     <div class="col-md-4">
       <div class="cocktail-show-card">
         <h5> View more! </h5>
-        <%= link_to "View previous", cocktail_path(@cocktail.id-1), class: "btn btn-primary mb-2" %>
         <%= link_to "View next", cocktail_path(@cocktail.id+1), class: "btn btn-primary mb-2" %>
+        <%= link_to "View previous", cocktail_path(@cocktail.id-1), class: "btn btn-primary mb-2" %>
         <%= link_to "View all", cocktails_path, class: "btn btn-primary mb-2" %>
       </div>
       <div class="cocktail-show-card">

@@ -19,5 +19,22 @@ import 'bootstrap';
 import { loadDynamicBannerText } from '../components/banner';
 loadDynamicBannerText();
 
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+initUpdateNavbarOnScroll();
+
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#sweet-alert-delete', {
+  title: "Are you sure?",
+  text: "This action cannot be reversed",
+  icon: "warning"
+}, (value) => {
+  console.log(value);
+  if (value) {
+    const link = document.querySelector('#delete-link');
+    console.log(link);
+    link.click();
+  };
+});
 console.log('Hello World from Webpacker')
 

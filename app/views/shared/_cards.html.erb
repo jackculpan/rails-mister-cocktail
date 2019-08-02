@@ -1,16 +1,15 @@
-<div class="cards">
-  <% @cocktails.each do |cocktail| %>
-  <a href="<%=cocktail_path(cocktail.id)%>" class="href">
-  <div class="card">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
-      <h2><%= cocktail.name %></h2>
-      <% cocktail.ingredients.each do |ingredient| %>
-      <ul>
-        <li><%=ingredient.name %></li>
-      </ul>
-      <% end %>
+<div class="container">
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+    <a href="<%=cocktail_path(cocktail.id)%>" class="href">
+    <div class="cocktail-card">
+      <div class="card-category cocktail-card-img"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+        <div class="cocktail-card-content">
+          <h2><%= cocktail.name %></h2>
+        </div>
+      </div>
     </div>
+    </a>
+    <% end %>
   </div>
-  </a>
-  <% end %>
 </div>
