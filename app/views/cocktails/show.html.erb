@@ -1,5 +1,10 @@
+<%=
+if @cocktail.photo.nil?
+  render "shared/banner"
+else
+  render "shared/show_banner"
+end %>
 
-<%= render "shared/banner" %>
 
 <div class="container">
   <div class="row">
@@ -12,18 +17,32 @@
         <p><%=  %> </p>
         <%= link_to "Edit", edit_cocktail_path(@cocktail.id), class: "btn btn-primary mb-2" %>
       </div>
+      <div class="cocktail-show-card">
+        <h5> Reviews </h5>
+        <% @cocktail.reviews.each do |review| %>
+        <ul>
+          <li><%= review.content %></li>
+          <li>Rating: <%= review.rating %></li>
+        </ul>
+        <% end %>
+      </div>
     </div>
     <div class="col-md-4">
       <div class="cocktail-show-card">
         <h2>Cocktail ingredients:</h2>
         <% @cocktail.ingredients.each do |ingredient| %>
         <p> <%= ingredient.name %>
-          <%= ingredient %></p>
+          <% ingredient.doses.each do |dose| %></p>
+          <ul>
+            <li> <%= dose.name %> </li>
+            <li> <%= dose.description %> </li>
+          </ul>
+          <% end %>
         <% end %>
       </div>
       <div class="cocktail-show-card">
         <h3> Add dose </h3>
-        <%= render "/doses/form", method: :edit %>
+        <%= render "/doses/form" %>
       </div>
     </div>
     <div class="col-md-4">
@@ -39,6 +58,10 @@
         <i class ="fa fa-twitter-square fa-2x mr-2"></i>
         <i class ="fa fa-pinterest-square fa-2x mr-2"></i>
         <i class ="fa fa-envelope-square fa-2x mr-2"></i>
+      </div>
+      <div class="cocktail-show-card">
+        <h5> Write a review </h5>
+        <%= render "reviews/form" %>
       </div>
     </div>
   </div>

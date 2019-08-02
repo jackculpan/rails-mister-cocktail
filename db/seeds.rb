@@ -21,7 +21,7 @@ Ingredient.create(name: "Sweet Vermouth")
 Ingredient.create(name: "Strawberry schnapps")
 Ingredient.create(name: "Scotch")
 
-Cocktail.create(name: "Mint Julep")
-Cocktail.create(name: "Mojito")
-Cocktail.create(name: "Daquiri")
-Cocktail.create(name: "Margarita")
+url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
+
+Cocktail.create!(name: "Mint Julep", remote_photo_url: url)
+
