@@ -1,0 +1,16 @@
+<div class="cards">
+  <% @cocktails.each do |cocktail| %>
+  <a href="<%=cocktail_path(cocktail.id)%>" class="href">
+  <div class="card">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://source.unsplash.com/random/1200x800)">
+      <h2><%= cocktail.name %></h2>
+      <% cocktail.ingredients.each do |ingredient| %>
+      <ul>
+        <li><%=ingredient.name %></li>
+      </ul>
+      <% end %>
+    </div>
+  </div>
+  </a>
+  <% end %>
+</div>
