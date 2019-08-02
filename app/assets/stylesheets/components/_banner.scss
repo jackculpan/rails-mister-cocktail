@@ -3,8 +3,9 @@
   background-position: center;
   background-size: cover;
   margin-bottom: 20px;
+  display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 }
 
 .banner h1 {
@@ -20,4 +21,9 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner-container {
+  display: flex;
+  flex-direction: column;
 }
