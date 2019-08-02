@@ -45,11 +45,9 @@ class CocktailsController < ApplicationController
   end
 
   def search
-    # @cocktails = Cocktail.select(params[:name])
-
-    @name = params[:name]
-
-    @cocktails = COCKTAILS.select { |id, r| r[:name] == @name }
+    # # @cocktails = Cocktail.select(params[:name])
+    # @name = search[:query]
+    # @cocktails = Cocktail.where("name LIKE '%#{@name}%'")
   end
 
   private
