@@ -45,7 +45,11 @@ class CocktailsController < ApplicationController
   end
 
   def search
-    @cocktail = Cocktail.find(params[:name])
+    # @cocktails = Cocktail.select(params[:name])
+
+    @name = params[:name]
+
+    @cocktails = COCKTAILS.select { |id, r| r[:name] == @name }
   end
 
   private
@@ -54,7 +58,4 @@ class CocktailsController < ApplicationController
     return params.require(:cocktail).permit(:name, :photo)
   end
 
-  def dose_params
-    return params.require(:dose).permit(:name, :description)
-  end
 end

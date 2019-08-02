@@ -9,6 +9,4 @@ Rails.application.routes.draw do
 
   resources :ingredients
 
-  get 'cocktails/search', to: 'cocktails#search'
-
 end
