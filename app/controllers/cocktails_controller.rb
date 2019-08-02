@@ -1,6 +1,7 @@
 class CocktailsController < ApplicationController
   def index
-    @cocktails = Cocktail.all
+    # @cocktails = Cocktail.all
+    @cocktails = params[:query] ? search : Cocktail.all
   end
 
   def show
@@ -46,8 +47,7 @@ class CocktailsController < ApplicationController
 
   def search
     # # @cocktails = Cocktail.select(params[:name])
-    # @name = search[:query]
-    # @cocktails = Cocktail.where("name LIKE '%#{@name}%'")
+    Cocktail.where("name LIKE '%#{params[:query].capitalize}%'")
   end
 
   private

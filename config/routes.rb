@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   resources :ingredients
 
+  get "/search" => "songs#search"
 end
