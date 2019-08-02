@@ -4,6 +4,11 @@
   grid-gap: 16px;
 }
 
+.card-category{
+  display: flex;
+  align-items: flex-end;
+}
+
 .cocktail-card {
   width: 100%;
   position: relative;
@@ -11,8 +16,6 @@
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-
-
   h2 {
     color: white;
   }
@@ -23,6 +26,16 @@
   background-position: center;
   background-size: cover;
 }
+
+.cocktail-card-img a:hover {
+  .cocktail-card-img {
+  background-color: black;
+  opacity: 0.6;
+  background-position: center;
+  background-size: cover;
+}
+}
+
 
 .cocktail-card-content {
   padding-top: 10px;
