@@ -17,12 +17,13 @@
       <div class="cocktail-show-card">
         <h2>Cocktail ingredients:</h2>
         <% @cocktail.ingredients.each do |ingredient| %>
-        <p> <% ingredient.name %> </p>
+        <p> <%= ingredient.name %>
+          <%= ingredient %></p>
         <% end %>
-        <%= link_to "Edit doses", edit_cocktail_dose_path(@cocktail.id), class: "btn btn-primary mt-2 mb-2" %>
-        <h3> Edit doses </h3>
-        <%= render "/doses/form" %>
-
+      </div>
+      <div class="cocktail-show-card">
+        <h3> Add dose </h3>
+        <%= render "/doses/form", method: :edit %>
       </div>
     </div>
     <div class="col-md-4">
