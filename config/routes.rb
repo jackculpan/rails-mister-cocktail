@@ -8,6 +8,4 @@ Rails.application.routes.draw do
   end
 
   resources :ingredients
-
-  get "/search" => "songs#search"
 end
