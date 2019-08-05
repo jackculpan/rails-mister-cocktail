@@ -47,7 +47,7 @@ class CocktailsController < ApplicationController
 
   def search
     # # @cocktails = Cocktail.select(params[:name])
-    Cocktail.where("name LIKE '%#{params[:query].capitalize}%'")
+    Cocktail.where("name LIKE '%#{params[:query].first.capitalize}%'")
   end
 
   private

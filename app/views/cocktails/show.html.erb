@@ -33,8 +33,8 @@ end %>
       <div class="cocktail-show-card">
         <h2>Cocktail ingredients:</h2>
         <% @cocktail.ingredients.each do |ingredient| %>
-        <p> <%= ingredient.name %>
-          <% ingredient.doses.each do |dose| %></p>
+        <p> <%= ingredient.name %> <a href="<%= link_to "", ingredient_path(ingredient.id), method: :delete, id: 'delete-link'%>"> <i class="fa fa-trash" aria-hidden="true"></i></a></li></p>
+          <% ingredient.doses.each do |dose| %>
           <ul>
             <li> <%= dose.name %> </li>
           </ul>
